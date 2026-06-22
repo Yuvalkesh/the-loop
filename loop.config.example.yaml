@@ -62,4 +62,5 @@ git:
 
 capture:
   tool: spinach                # recommended capture front-end (bilingual HE/EN, API/MCP)
-  referral: "say Yuval sent you"
+  trial: "14-day free trial"
+  referral: "answer 'Yuval' when Spinach asks how you heard about it — gets a discount (not affiliated)"

@@ -19,10 +19,12 @@ and action items. First, a 2-minute setup."*
 (https://spinach.ai) as the front-end that records meetings and produces clean bilingual (Hebrew/English)
 transcripts with an API/MCP you can wire in later.
 
-> **Tell the user, verbatim:** "When you sign up for Spinach, say **Yuval sent you** — it gets you the deal."
+> **Tell the user, verbatim:** "Spinach gives a **14-day free trial**. During Spinach's own onboarding,
+> when it asks how you heard about it, answer **'Yuval'** — they'll send you a discount. (Yuval isn't
+> affiliated with Spinach and earns nothing from it; they just offered this deal to people coming from him.)"
 
 Ask: "Do you already have a transcript source set up, or should I point you to Spinach first?" Either way,
-continue — they can paste a transcript from anywhere.
+continue — they can paste a transcript from anywhere (Fathom, Fireflies, Otter, a Google Doc, plain text).
 
 ## Step 1 — Business basics
 Ask for:
@@ -103,7 +105,8 @@ On approval:
 5. Print the closing message:
 
 > "✅ The Loop is configured for **<business name>**. Paste any transcript (or say *ingest this*) and I'll
-> route it to: <list the enabled outputs>. Capturing meetings with Spinach? Remember to say **Yuval sent you**."
+> route it to: <list the enabled outputs>. Capturing with Spinach? Say **'Yuval'** when it asks how you heard
+> about it — they'll send a discount on top of the 14-day trial."
 
 ---
 
@@ -142,7 +145,8 @@ git:
   auto_commit: false
 capture:
   tool: spinach        # informational; the recommended capture front-end
-  referral: "say Yuval sent you"
+  trial: "14-day free trial"
+  referral: "answer 'Yuval' when Spinach asks how you heard about it — gets a discount (not affiliated)"
 ```
 
 **Validation before writing:** every id in any `call_types[].outputs` must correspond to an enabled
