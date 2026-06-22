@@ -1,0 +1,17 @@
+# The cloner's own config + data — keep clones clean
+loop.config.yaml
+loop/sources/
+loop/assets/
+loop/crm/
+loop/content/
+loop/lessons/
+loop/decisions/
+loop/voices/
+loop/index.md
+loop/log.md
+# (onboarding recreates this folder tree on first run — see engine/onboarding-workflow.md step 8)
+
+# OS / editor noise
+.DS_Store
+*.swp
+.env

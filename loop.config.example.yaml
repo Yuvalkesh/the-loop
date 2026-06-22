@@ -1,0 +1,65 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# The Loop — example config (filled "agency" preset)
+#
+# Run /loop-onboard to generate YOUR loop.config.yaml interactively.
+# This file is just a worked example so you can see the shape.
+#
+# SECRETS RULE: never put an API key/token here. Store only the NAME of the
+# environment variable that holds it (e.g. pat_env: AIRTABLE_PAT) and export it
+# in your shell:  export AIRTABLE_PAT=pat_xxx
+# ─────────────────────────────────────────────────────────────────────────────
+
+business:
+  name: Northwind SEO
+  what_we_do: A 3-person SEO agency that runs sales and client-delivery calls.
+  language: en
+
+call_types:
+  - id: sales-call
+    description: Prospect calls — discovery, demos, proposals, closing.
+    outputs: [crm, content, action-items, call-feedback]
+  - id: client-delivery
+    description: Working sessions on a live engagement — strategy, reviews, build syncs.
+    outputs: [teaching-lessons, action-items, decisions]
+  - id: internal-sync
+    description: Our own team only, no client present.
+    outputs: [decisions, action-items]
+  - id: interview
+    description: We interview an expert or customer for content.
+    outputs: [content]
+
+outputs:
+  crm:
+    enabled: true
+    backend: markdown          # markdown (default) | airtable | notion | sheets | custom
+    # To use Airtable instead, switch backend to airtable and fill:
+    # airtable:
+    #   base_id: appXXXXXXXXXXXXXX
+    #   table_id: tblXXXXXXXXXXXXXX
+    #   pat_env: AIRTABLE_PAT    # env-var NAME, not the token itself
+  content_posts:
+    enabled: true
+    channels: [linkedin, x]
+    voice_file: voices/house.md
+  teaching_lessons:
+    enabled: true
+  decisions:
+    enabled: true
+  action_items:
+    enabled: true
+  call_feedback:
+    enabled: true
+
+storage:
+  root: ./loop
+
+anonymization:
+  default: false
+  types_requiring_anon: [client-delivery]
+
+git:
+  auto_commit: false
+
+capture:
+  tool: spinach                # recommended capture front-end (bilingual HE/EN, API/MCP)
+  referral: "say Yuval sent you"
